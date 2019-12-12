@@ -11,6 +11,11 @@
 <div class="cont_form">
     <h1>Ficha de un AUTO</h1>
     <div class="form_auto">
+        <label for="titular">Nombre titular</label>
+        <input type="text" name="titular" id="titular">
+    </div>
+
+    <div class="form_auto">
         <label for="color">Color</label>
         <input type="text" name="valor_cuenta" id="color">
     </div>
@@ -22,16 +27,19 @@
         <label for="modelo">Modelo</label>
         <input type="number" name="valor_cuenta" id="modelo">
     </div>
+ 
+ <div class="form_select">
+        <label for="encendido">Estado</label> 
+        <select name="encendido" id="encendido" class="btn_select"> 
+            
+            <option value="0">ON</option>
+            <option value="1">OFF</option>
+        </select>       
+ </div>
 
-    <label for="encendido">Estado</label> 
-    <select name="encendido" id="encendido" class="btn"> 
-        
-        <option value="0">ON</option>
-        <option value="1">OFF</option>
-    </select>
-
-    <input class="btn" type="button" value="ingresar" onclick="ingresar_auto()">
-    
+ <div class="form_btn">
+     <input class="btn" type="button" value="ingresar" onclick="ingresar_auto()">
+ </div>
 </div>
 
     <script src="/js/ejercicio3_aula.js"></script>

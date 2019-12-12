@@ -1,6 +1,24 @@
 .form_auto{
-    margin: 20px auto;
+    margin: 4px auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
 }
+
+.form_select{
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+.form_btn{
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
 .cont_form{
     display: flex;
     flex-direction: column;
@@ -11,8 +29,15 @@
 }
 
 .btn{
-    margin: 5px 8px;
+    margin: 2px 3px;
+    padding: 5px;  
+    width: 200px;
+}
+
+.btn_select{
+    margin: 2px 3px;
     padding: 5px;
+    width: 73px;
 
 }
 

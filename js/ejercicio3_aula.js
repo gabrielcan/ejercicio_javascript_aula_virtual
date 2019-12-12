@@ -6,61 +6,13 @@
 
 
 
-// var auto={
-//     color:'rojo',
-//     marca:'fiat',
-//     modelo:2099,
-//     encendido:false
-// }
-
-// function ingresar_auto(){
-// var arranque;
-// var text_estado;
-//     auto.color=document.getElementById('color').value;
-//     auto.marca=document.getElementById('marca').value;
-//      auto.modelo=document.getElementById('modelo').value;
-//      arranque= document.getElementById('encendido').value;
-
-//      if(arranque==0){
-// auto.encendido=true;
-// text_estado='ENCENDIDO';
-//      }
-//      else{
-//         auto.encendido=false; 
-//         text_estado='APAGADO'; 
-//      }
-//     //  console.log(arranque)
-
-// if (confirm('color: '+auto.color+'\n'+'Marca: '+auto.marca+'\n'+'Modelo: '+auto.modelo+'\n'+'Estado del Auto: '+text_estado)==true){
-//     limpiar();
-// } 
-//     }
-
-    
-// function limpiar(){
-//     document.getElementById('color').value=0;
-//     document.getElementById('marca').value=0;
-//     document.getElementById('modelo').value=0;
-
-// }
-// function encendido(){
-//     var enciende=prompt('para encender el auto ingrese un valor mayor a 0:');
-
-//     if(enciende>0){
-//         return true;
-//     }
-//     return false
-// }
-
-
-// ejercicio hecho con clase y poniendo metodos
-
-function Auto(marca,modelo,nombre,color){
-this.marca=marca;
-this.modelo=modelo;
-this.nombre=nombre;
-this.color=color;
-this.encendido=false;
+function Auto(){
+this.marca;
+this.titular;
+this.nombre;
+this.color;
+this.modelo;
+this.encendido;
 this.encender=function(){
     this.encendido=true;
 },
@@ -68,29 +20,65 @@ this.apagar=function(){
     this.encendido=false;
 }
 
+this.ingresar_datos=function(){
+this.color=document.getElementById('color').value;
+this.marca=document.getElementById('marca').value;
+this.modelo=document.getElementById('modelo').value;
+this.titular=document.getElementById('titular').value;
+
+
+let selec_option=document.getElementById('encendido').value;
+
+// console.log('opcion del select'+selec_option)
+if(selec_option==0){
+    this.encender();
+} else{
+    this.apagar();
+}
+if(this.ctrl(this.color,this.marca,this.modelo,this.titular)==true){
+
+this.imprimir();
+} else {
+    alert('debe completar todos los campos');
 }
 
-const auto1=new Auto('renault',2000,'clio','verde'); // se crea una instancia de una clase
 
-console.log(auto1);
-auto1.encender()
-console.log(auto1);
+}
+this.limpiar=function(){
+document.getElementById('color').value='';
+document.getElementById('titular').focus();
+document.getElementById('marca').value='';
+document.getElementById('modelo').value='';
+document.getElementById('titular').value='';
+}
+this.imprimir=function(){
+ console.log('TITULAR: '+this.titular+'\n'+'COLOR: '+this.color+'\n'+'MARCA: '+this.marca+'\n'+'MODELO: '+this.modelo+'\n'+'ENCENDIDO: '+this.encendido);
+let msj= confirm('TITULAR: '+this.titular+'\n'+'COLOR: '+this.color+'\n'+'MARCA: '+this.marca+'\n'+'MODELO: '+this.modelo+'\n'+'ENCENDIDO: '+this.encendido);
 
+// console.log('valor de msj: '+msj);
 
-// var auto={
-//     marca:'renault',
-//     modelo:2018,
-//     nombre:'clio',
-//     color:'rojo',
-//     encendido:true,
-//     encenderAuto:function(){ //funcion anonima
-//         this.encendido=true; // para hacer referencia a la propiedad de la misma clase se pone this.
-//     },
-//     encenderAuto:function(){
-//         this.encendido=false;
-//     }
-// }
+ if(msj==true){
+    this.limpiar();
+}
+}
 
+this.ctrl=function(campo1,campo2,campo3,campo4){
+
+if(campo1!=''&&campo2!=''&&campo3!=''&&campo4!='')
+{
+    return true;
+} else{
+    return false;
+}
+}
+}
+
+const auto1=new Auto(); // se crea una instancia de una clase
+
+function ingresar_auto(){
+    
+auto1.ingresar_datos();
+}
 
 
 
