@@ -8,6 +8,12 @@ Un método extraer() que permita retirar la cantidad pasada como parámetro.
 Un método informar() que retorne la información del estado de la cuenta. 
 Utiliza este objeto para mostrar la descripción, ingresar y extraer dinero y volver a mostrar la descripción del estado de la cuenta.
 
+(investigar)
+funciones anonimas 
+variables complejas
+variables no primitivas no pueden ser comparas de manera directa, debido que ocupan el mismo lugar de memoria
+lo que puede generar que te muestra que son iguales porque ocupan el mismo lugar de memoria
+
 */
 
 var cuenta={
@@ -21,7 +27,6 @@ function ingresar(){
 
 var ingreso=document.getElementById('valor_cuenta').value;
 cuenta.ingresos[cuenta.ingresos.length]=parseFloat(ingreso);
-
 
 
 //console.log(cuenta.ingresos)

@@ -11,5 +11,26 @@
 }
 
 .btn{
-    margin: 10px auto;
+    margin: 5px 8px;
+    padding: 5px;
+
+}
+
+.formularios{
+margin: 10px auto;
+}
+.contenedor{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    width: 50%;
+    text-align: center;
+}
+#cuenta{
+    display: none;
+    
+}
+#btn_nombre{
+    display: block;
 }
